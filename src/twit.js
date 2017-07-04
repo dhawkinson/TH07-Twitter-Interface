@@ -7,15 +7,7 @@ const Twit     = require('twit');            //  twit module
 const apiParms = require('./config.js');     //  request configuration params
 
 //  NOTE:   the left side of these named pairs act as keywords
-const T = new Twit({
-    consumer_key            : apiParms.consumerKey,
-    consumer_secret         : apiParms.consumerSecret,
-    access_token            : apiParms.accessToken,
-    access_token_secret     : apiParms.accessTokenSecret,
-    owner                   : apiParms.owner,
-    owner_id                : apiParms.ownerId,
-    timeout_ms              : 60*1000,  // optional HTTP request timeout to apply to all requests.
-});
+const T = new Twit(apiParms)
 
 console.log(T);
 
