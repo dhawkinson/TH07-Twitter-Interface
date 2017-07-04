@@ -18,6 +18,7 @@ app.get('/', function(req, res) {
         .then(function(result) {                     //  successful
             console.log('data', result.data);
             const user = result.data.screen_name;
+            console.log(user);
             Promise.all([
                 timeLine(user),                      //  request the "tweets timeline" entries for the user
                 following(user),                     //  request the "following" entries for the user
