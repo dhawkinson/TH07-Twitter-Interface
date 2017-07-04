@@ -4,9 +4,7 @@ const express  = require('express');            //  make express available
 const pug      = require('pug');                //  pug template engine
 const Twit     = require('twit');               //  twit module
 const apiParms = require('./config.js');        //  request configuration params
-const T        = new Twit(apiParms);
-
-//  get Twitter data
+const T        = new Twit(apiParms);            //  get Twitter data
 
 const app            = express();               //  sets the app framework to express
 
