@@ -1,0 +1,26 @@
+{
+    "name": "fsjsProject07",
+    "version": "1.0.0",
+    "description": "Build Twitter API Inteface",
+    "main": "app.js",
+    "scripts": {
+        "start": "node ./src/app.js",
+        "devstart": "nodemon ./src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dhawkinson/fsjsProject07.git"
+    },
+    "author": "theHawk",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dhawkinson/fsjsProject07/issues"
+    },
+    "homepage": "https://github.com/dhawkinson/fsjsProject07#readme",
+    "dependencies": {
+        "express": "^4.15.3",
+        "nodemon": "^1.11.0",
+        "pug": "^2.0.0-rc.2",
+        "twit": "^2.2.9"
+    }
+}
