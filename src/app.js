@@ -2,7 +2,8 @@
 
 const express        = require('express');          //  make express available
 const pug            = require('pug');              //  pug template engine
-const twitData       = require('./data/twit');      //  parsed out request data
+const Twit           = require('twit');             //  twitter API module
+const twitData       = require('./twit.js');        //  parsed out request data
 
 const app            = express();                   //  sets the app framework to express
 
