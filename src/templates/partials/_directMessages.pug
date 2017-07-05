@@ -3,7 +3,7 @@
         li
             h3
             ul.app--message--conversation
-                each message in messages
+                each message in directMessages
                     li.app--message--me
                         .app--avatar(style='background-image: url(' + message.sender.profile_image_url + ')')
                             img(src=message.sender.profile_image_url)

@@ -22,5 +22,6 @@
         "nodemon": "^1.11.0",
         "pug": "^2.0.0-rc.2",
         "twit": "^2.2.9"
-    }
+    },
+    "devDependencies": {}
 }

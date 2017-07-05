@@ -8,8 +8,8 @@
 
     [x] A package.json file that includes your project’s dependencies.</li>
     [x] A Jade/Pug template file to display tweets and messages</li>
-    [x] A config.js file that will contain your application’s authentication code</li>
-    [x] A .gitignore file to add your config.js and node_modules/ folder to. This will prevent these files from being committed and pushed to github</li>
+    [x] A keys.js file that will contain your application’s authentication code</li>
+    [x] A .gitignore file to add your keys.js and node_modules/ folder to. This will prevent these files from being committed and pushed to github</li>
 
 ####The following files are provided:
 
@@ -27,7 +27,7 @@ This will generate the keys and access tokens you need to authenticate your appl
 
 It’s a good idea to use an npm module to help you with this part. For this project, you’ll use an npm module called Twit. You can find a link in the project resources. Be sure to look through the documentation and familiarize yourself with how it works.
 
-    [x] Create a file called config.js. 
+    [x] Create a file called keys.js. 
 
 In this file, you’ll assign an object literal to the module.exports object, as shown in the Twit documentation. The object literal should have the following properties with their corresponding values from your Twitter application account:
 
@@ -36,7 +36,7 @@ In this file, you’ll assign an object literal to the module.exports object, as
         [x] access_token
         [x] access_token_secret
 
-Import this code into your app.js file to authenticate your application so you can request data from the Twitter API. The config.js file must be listed in the .gitignore file so it won’t be committed to your github repository. This will prevent your keys and tokens from getting posted publicly to GitHub. It is very important that you do NOT upload any of your personal API keys / secrets / passwords to Github or other publicly accessible place.
+Import this code into your app.js file to authenticate your application so you can request data from the Twitter API. The keys.js file must be listed in the .gitignore file so it won’t be committed to your github repository. This will prevent your keys and tokens from getting posted publicly to GitHub. It is very important that you do NOT upload any of your personal API keys / secrets / passwords to Github or other publicly accessible place.
 
 **When your project is reviewed, the project reviewer will use their own config file.**
 
