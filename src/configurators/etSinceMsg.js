@@ -8,7 +8,7 @@
 module.exports = (timestamp, directMessage = false) => {
     const now = new Date();
     const dmTime = new Date(timestamp);
-    let etSinceDirMsg = '';
+    let etSinceMsg = '';
     
     const milliseconds = (now.getTime() - dmTime.getTime());
     const seconds = (milliseconds / 1000);
@@ -17,20 +17,20 @@ module.exports = (timestamp, directMessage = false) => {
     
     switch (true) {
         case seconds < 60:
-            etSinceDirMsg = `${Math.round(seconds)}${directMessage ? ' seconds ago' : 's'}`;
+            etSinceMsg = `${Math.round(seconds)}${directMessage ? ' seconds ago' : 's'}`;
             break;
         
         case minutes < 60:
-            etSinceDirMsg = `${Math.round(minutes)}${directMessage ? ' minutes ago ' : 'm'}`;
+            etSinceMsg = `${Math.round(minutes)}${directMessage ? ' minutes ago ' : 'm'}`;
             break;
         
         case hours < 24:
-            etSinceDirMsg = `${Math.round(hours)}${directMessage ? ' hours ago' : 'h'}`;
+            etSinceMsg = `${Math.round(hours)}${directMessage ? ' hours ago' : 'h'}`;
             break;
         default:
-            etSinceDirMsg = dmTime.toDateString().slice(4, 10);
+            etSinceMsg = dmTime.toDateString().slice(4, 10);
             break;
     }
     
-    return `${etSinceDirMsg}`;
+    return `${etSinceMsg}`;
 };

@@ -2,7 +2,7 @@
 
 <p>To complete this project, follow the instructions below. If you get stuck, ask a question in the community. There are seven required elements.</p>
 
-##Set up a new Express project in the provided app.js file.
+##Set up a new Express project in the provided appPassOne.js file.
 
 ####You will need to create the following files:
 
@@ -13,7 +13,7 @@
 
 ####The following files are provided:
 
-    [x] An app.js file where you will set up your Express app and write your API calls</li>
+    [x] An appPassOne.js file where you will set up your Express app and write your API calls</li>
     [x] An index.html file that provides an example of what the finished project should look like, and some CSS and image files to use with your Jade/Pug template</li>
 
 
@@ -36,7 +36,7 @@ In this file, you’ll assign an object literal to the module.exports object, as
         [x] access_token
         [x] access_token_secret
 
-Import this code into your app.js file to authenticate your application so you can request data from the Twitter API. The keys.js file must be listed in the .gitignore file so it won’t be committed to your github repository. This will prevent your keys and tokens from getting posted publicly to GitHub. It is very important that you do NOT upload any of your personal API keys / secrets / passwords to Github or other publicly accessible place.
+Import this code into your appPassOne.js file to authenticate your application so you can request data from the Twitter API. The keys.js file must be listed in the .gitignore file so it won’t be committed to your github repository. This will prevent your keys and tokens from getting posted publicly to GitHub. It is very important that you do NOT upload any of your personal API keys / secrets / passwords to Github or other publicly accessible place.
 
 **When your project is reviewed, the project reviewer will use their own config file.**
 

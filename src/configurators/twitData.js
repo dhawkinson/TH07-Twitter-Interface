@@ -6,6 +6,6 @@
 const Twit = require('twit');
 const apiParms = require('./keys.js');
 
-const twitData = new Twit(apiParms);
+const config = new Twit(apiParms);
 
-module.exports = twitData;
+module.exports = config;

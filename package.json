@@ -11,16 +11,21 @@
         "type": "git",
         "url": "git+https://github.com/dhawkinson/fsjsProject07.git"
     },
-    "author": "theHawk",
+    "author": "doug5solas",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/dhawkinson/fsjsProject07/issues"
     },
     "homepage": "https://github.com/dhawkinson/fsjsProject07#readme",
     "dependencies": {
+        "body-parser": "^1.17.2",
+        "cookie-parser": "^1.4.3",
+        "debug": "^2.6.8",
         "express": "^4.15.3",
+        "morgan": "^1.8.2",
         "nodemon": "^1.11.0",
         "pug": "^2.0.0-rc.2",
+        "serve-favicon": "^2.4.3",
         "twit": "^2.2.9"
     },
     "devDependencies": {}

@@ -1,31 +1,46 @@
 'use strict';
 
-const express  = require('express');                 //  make express available
-const pug      = require('pug');                     //  pug template engine
-const Twit     = require('twit');                    //  twit module
-const apiKeys  = require('./configurators/keys');    //  request configuration params
-const T        = new Twit(apiKeys);            //  get Twitter data
-const index    = require('./routes/index');
+//  Require all packages for the app
+//===================================================
+const express      = require('express');                    //  express as a framework
+const bodyParser   = require('body-parser');                //  body-parser - to handle request parsing
+const cookieParser = require('cookie-parser');              //  cookie-parser - to handle cookie parsing
+const pug          = require('pug');                        //  pug template engine
+const index        = require('./routes/index');             //  get the home page routing
 
-const app            = express();               //  sets the app framework to express
+const app          = express();                             //  equate the app to express
 
-app.set('views', __dirname + '/templates');     //  set the template directory (pug files live here)
-app.set('view engine', 'pug');                  //  set pug to be the view engine
+// call express service modules
+//===================================================
+app.use(bodyParser.urlencoded({ extended: false }));        //  std express module
+app.use(cookieParser());                                    //  std express module
+app.use('/static', express.static('public'));               //  express static file service
 
-app.use(express.static(__dirname + '/public')); //  assign directory for static (unchanging) resources
-app.use('/', index);                        //  assign the starting point (landing page)
+// app.set is used to set app parameters
+//===================================================
+app.set('view engine', 'pug');                              //  set view (template) engine to pug
 
+//  call middleware modules
+//===================================================
+app.use(index);                                             //  use home page route
 
-// Start web server to listen on port 3000
-app.listen(3000, function () {
-    console.log('Frontend Server running on port 3000')
+//  call error handling
+//===================================================
+app.use((req, res, next) => {
+    "use strict";
+    const err = new Error('Sorry, your page was not found.');
+    err.status = 404;
+    next(err);
 });
 
+app.use((err, req, res, next) => {
+    "use strict";
+    res.locals.error = err;
+    res.status(err.status);
+    res.render('error');
+});
 
-
-
-
-
-
-
-
+app.listen(3000, () => {
+    "use strict";
+    console.log('The magic happens on localhost:3000!')
+});
