@@ -22,7 +22,7 @@ app.set('view engine', 'pug');                              //  set view (templa
 
 //  call middleware modules
 //===================================================
-app.use(index);                                             //  use home page route
+app.use('/', index);                                        //  use home page route
 
 //  call error handling
 //===================================================

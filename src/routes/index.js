@@ -47,8 +47,5 @@ router.get('/',(req, res) => {
     });
 });
 console.log('progress point 2');
-router.get('/', (req, res) => {
-    res.render('index');
-});
 
 module.exports = router;
