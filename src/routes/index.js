@@ -10,7 +10,7 @@ const etSinceMsg     = require('../configurators/etSinceMsg');
 console.log('progress point 1');
 //  render the index page (root route)
 // all requests to this router will first hit this middleware
-router.use(function(req, res, next) {
+router.get('/',(req, res) => {
     config.get('account/verify_credentials', { skip_status: true })
         .then(result => {
         const user = result.data;
