@@ -1,0 +1,13 @@
+extends ./layout
+
+block main
+     .bounds.app--body
+         include includes/_bodyHeader
+         .grid-33
+             include includes/_tweets
+         .grid-33
+             include includes/_friends.pug
+         .grid-33
+             include includes/_messages
+     .app--tweet
+         include includes/_footer.pug
