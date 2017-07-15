@@ -1,13 +1,14 @@
-header.circle--header `(style=#{reqUser.screen_name}?background: url("#{reqUser.profile_banner_url}");background-size: cover; : '')`
+header.circle--header `(style=#{user.screen_name}?background: url("#{user.profile_banner_url}");background-size: 
+cover : '')`
     .bounds
         .circle--fluid
             .circle--fluid--cell
-                a.logo (href=`http://www.twitter.com/${reqUser.screen_name}`, target='_blank')
+                a.logo (href=`http://www.twitter.com/${user.screen_name}`, target='_blank')
                     img(src='/static/images/twitter.svg')
-                    h1 `#{reqUser}?@#{reqUser.screen_name} : ''}`
+                    h1 `#{user}?@#{user.screen_name} : ''}`
             .circle--fluid--cell.align-right
                 nav
                     ul.circle--inline
                         li
-                            a #{reqUser ? 'Sign Out' : 'Sign In'}
+                            a #{user ? 'Sign Out' : 'Sign In'}
 
