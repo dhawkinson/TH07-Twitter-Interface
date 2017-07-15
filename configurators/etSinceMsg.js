@@ -19,11 +19,9 @@ module.exports = (timestamp, directMessage = false) => {
         case seconds < 60:
             etSinceMsg = `${Math.round(seconds)}${directMessage ? ' seconds ago' : 's'}`;
             break;
-        
         case minutes < 60:
             etSinceMsg = `${Math.round(minutes)}${directMessage ? ' minutes ago ' : 'm'}`;
             break;
-        
         case hours < 24:
             etSinceMsg = `${Math.round(hours)}${directMessage ? ' hours ago' : 'h'}`;
             break;
@@ -31,6 +29,5 @@ module.exports = (timestamp, directMessage = false) => {
             etSinceMsg = dmTime.toDateString().slice(4, 10);
             break;
     }
-    
     return `${etSinceMsg}`;
 };

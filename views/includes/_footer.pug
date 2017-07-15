@@ -3,7 +3,7 @@ form#tweet-form(method='post' action='/')
         .circle--fluid--cell.circle--fluid--primary.align-bottom.app--tweet--post
             .app--avatar (style=`background-image: url('${reqUser.profile_image_url}')`)
                 img (src=`${reqUser.profile_image_url}`)
-            input#tweet-box.circle--textarea--input(placeholder='What is happening?', type='text', name='tweetContent')
+            input#tweet-box.circle--textarea--input(placeholder='What\'s happening?', type='text', name='tweetContent')
             strong#tweet-char.app--tweet--char 140
         .circle--fluid--cell.align-bottom
             button(type='submit')#tweeter.button.button-primary Tweet

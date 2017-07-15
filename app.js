@@ -17,8 +17,8 @@ app.use('/static', express.static('public'));            //  express static file
 
 // app.set is used to set app parameters
 //===================================================
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');                             //  set view (template) engine to pug
+app.set('views', './views');                             //  set the views folder
+app.set('view engine', 'pug');                           //  set view engine to pug
 
 //  call middleware modules
 //===================================================
