@@ -5,7 +5,9 @@
 const express      = require('express');                 //  express as a framework
 const bodyParser   = require('body-parser');             //  body-parser - to handle request parsing
 const cookieParser = require('cookie-parser');           //  cookie-parser - to handle cookie parsing
+const path         = require('path');                    //  path director
 const app          = express();                          //  equate the app to express
+const index        = require('./routes/index');          //  establish the root route 
 
 // call express service modules
 //===================================================
@@ -13,9 +15,14 @@ app.use(bodyParser.urlencoded({ extended: false }));     //  std express module
 app.use(cookieParser());                                 //  std express module
 app.use('/static', express.static('public'));            //  express static file service
 
+// app.set is used to set app parameters
+//===================================================
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');                             //  set view (template) engine to pug
+
 //  call middleware modules
 //===================================================
-const index = require('./routes/index');             //  since index is solo in route, 'require' seems to = 'use' 
+app.use('/', index);
 
 //  call error handling
 //===================================================
