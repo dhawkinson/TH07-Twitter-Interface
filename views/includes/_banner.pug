@@ -1,14 +1,18 @@
-header.circle--header `(style=#{user.screen_name}?background: url("#{user.profile_banner_url}");background-size: 
-cover : '')`
+header.circle--header(style='${userReq.screen_name}?background-image: url("${userReq.profile_banner_url}");background-size:cover')
     .bounds
         .circle--fluid
             .circle--fluid--cell
-                a.logo (href=`http://www.twitter.com/${user.screen_name}`, target='_blank')
-                    img(src='/static/images/twitter.svg')
-                    h1 `#{user}?@#{user.screen_name} : ''}`
-            .circle--fluid--cell.align-right
-                nav
-                    ul.circle--inline
-                        li
-                            a #{user ? 'Sign Out' : 'Sign In'}
+                a.logo(href='/')
+                img(src='/static/images/twitter.svg')
+                h1 `${userReq.name}+' @'+${userReq.screen_name}`
+                .circle--fluid--cell.align-right
+                    nav
+                        ul.circle--inline
+                            li
+                                a ${userReq ? 'Sign Out' : 'Sign In'}
 
+
+                                
+                                // `<p>${like('apples')}, but ${love('oranges')}.</p>`;
+                                // h1(style='color:blue;text-align:center') This is a header
+                                // p(style='color:green') This is a paragraph.

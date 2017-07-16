@@ -1,5 +1,5 @@
 "use strict";
-debugger;
+
 const express        = require('express');
 const router         = express.Router();
 const pug            = require('pug');
@@ -22,7 +22,6 @@ router.get('/', function(req, res) {
             config.get('direct_messages', { count: 5 })
         ]).then(values => {
             // render the index page (root route)
-
             res.render('index', {
                 reqUser    : values[0].data,
                 tweets     : values[1].data,
