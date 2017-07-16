@@ -10,6 +10,7 @@ const app            = express();
 router.get('/', function(req, res) {
     //  Returns 200 OK response code & representation of the requesting user on success; or 401 & an error message if not.
     config.get('account/verify_credentials').then(creds => {
+        const user = creds.data;                                 //  the results of credentialing
         Promise.all([
             //  Returns a variety of information about the user specified by user.screen_name
             config.get('users/show', { screen_name: user.screen_name }),
@@ -21,7 +22,8 @@ router.get('/', function(req, res) {
             config.get('direct_messages', { count: 5 })
         ]).then(values => {
             // render the index page (root route)
-            creds.render('index', {
+
+            res.render('index', {
                 reqUser    : values[0].data,
                 tweets     : values[1].data,
                 friends    : values[2].data,
