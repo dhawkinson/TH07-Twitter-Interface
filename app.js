@@ -7,8 +7,7 @@ const bodyParser   = require('body-parser');             //  body-parser - to ha
 const cookieParser = require('cookie-parser');           //  cookie-parser - to handle cookie parsing
 const path         = require('path');                    //  path director
 const app          = express();                          //  equate the app to express
-const index        = require('./routes/index');          //  establish the root route 
-console.log('app.js Point 1');
+const index        = require('./routes/index');          //  establish the root route
 
 // call express service modules
 //===================================================
@@ -24,7 +23,6 @@ app.set('view engine', 'pug');                           //  set view engine to 
 //  call middleware modules
 //===================================================
 app.use('/', index);
-console.log('app.js Point 2');
 
 //  call error handling
 //===================================================
