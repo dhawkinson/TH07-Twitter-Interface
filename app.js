@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');           //  cookie-parser - to 
 const path         = require('path');                    //  path director
 const app          = express();                          //  equate the app to express
 const index        = require('./routes/index');          //  establish the root route 
+console.log('app.js Point 1');
 
 // call express service modules
 //===================================================
@@ -23,6 +24,7 @@ app.set('view engine', 'pug');                           //  set view engine to 
 //  call middleware modules
 //===================================================
 app.use('/', index);
+console.log('app.js Point 2');
 
 //  call error handling
 //===================================================
@@ -33,12 +35,11 @@ app.use((req, res, next) => {
     next(err);
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     "use strict";
     res.locals.error = err;
     res.status(err.status);
     res.render('error');
-    next();
 });
 
 app.listen(3000, () => {
