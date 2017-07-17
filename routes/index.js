@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
                 friends    : values[2].data,
                 messages   : values[3].data,
                 etSinceMsg : etSinceMsg
-            }, function() {});
+            });
         }).catch(err => {
             console.log('Caught error in rendering ', err);
             if (app.get('env') === 'development') {

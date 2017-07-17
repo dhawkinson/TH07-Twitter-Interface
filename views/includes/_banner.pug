@@ -1,9 +1,9 @@
-header.circle--header(style='${userReq.screen_name}?background-image: url("${userReq.profile_banner_url}");background-size:cover')
+header.circle--header(style=`background-image: url("${userReq.profile_banner_url}");background-size:cover`)
     .bounds
         .circle--fluid
             .circle--fluid--cell
                 a.logo(href='/')
-                img(src='/static/images/twitter.svg')
+                img(src='/static/images/twitter.svg' style='width: 5%; height: auto')
                 h1 `${userReq.name}+' @'+${userReq.screen_name}`
                 .circle--fluid--cell.align-right
                     nav
