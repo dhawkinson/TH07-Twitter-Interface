@@ -1,7 +1,13 @@
 extends ./layout
 
 block main
-     .bounds.app--body
-         include includes/_bodyHeader
-         .grid-33
-             include includes/_tweets
+    .bounds.app--body
+        include includes/_bodyHeader
+        .grid-33
+            include includes/_tweets
+        .grid-33
+            include includes/_friends
+        .grid-33
+            include includes/_messages
+    //.app--tweet
+        include partials/_footer.pug
