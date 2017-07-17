@@ -13,7 +13,7 @@ const index        = require('./routes/index');          //  establish the root 
 //===================================================
 app.use(bodyParser.urlencoded({ extended: false }));     //  std express module
 app.use(cookieParser());                                 //  std express module
-app.use('/static', express.static('public'));            //  express static file service
+app.use(express.static('public'));                       //  express static file service
 
 // app.set is used to set app parameters
 //===================================================
