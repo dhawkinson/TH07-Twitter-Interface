@@ -22,6 +22,7 @@ router.get('/', function(req, res) {
             config.get('direct_messages', { count: 5 })
         ]).then(values => {
             // render the index page (root route)
+            console.log(values[3].data);
             res.render('index', {
                 reqUser    : values[0].data,
                 tweets     : values[1].data,

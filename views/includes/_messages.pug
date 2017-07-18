@@ -1,11 +1,11 @@
 .app--section
     ul.app--message--list
-        li
-            h3 Conversation with 
-                a #{reqUser.name}
-            ul.app--message--conversation
-                each message in messages
-                    li.app--message
+        each message in messages
+            li
+                h3 Conversation with 
+                    a #{message.sender.name}
+                app--message--conversation
+                    app--message
                         .app--avatar(style=`background-image: url('${message.sender.profile_image_url}')`)
                             img(src=`${message.sender.profile_image_url}`)
                         p.app--message--text #{message.text} 
