@@ -69,11 +69,11 @@ Render it in your template, and send it to the client at the “/” route. Plea
 
 To get an "exceeds" rating, you can expand on the project in the following ways:
 
-    [ ] Add a section to the bottom of your page that allows a user to post a new tweet.
+    [x] Add a section to the bottom of your page that allows a user to post a new tweet.
 
     [ ] Add an error page to your application, so that if anything goes wrong with your routes, the user will see a friendly message rendered, instead of the default error code.
 
-    [ ] Include your personal background image from Twitter as a background for the page header.
+    [x] Include your personal background image from Twitter as a background for the page header.
 
 ###NOTE:
 

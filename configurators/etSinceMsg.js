@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Created by westcoasthawk on 7/4/17.
+ * Created by doug5solas on 7/4/17.
  */
 //
 //  Build then export a string of the elapsed time from receipt of a direct message until now

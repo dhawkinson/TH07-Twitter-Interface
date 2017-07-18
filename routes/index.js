@@ -49,4 +49,12 @@ router.get('/', function(req, res) {
     });
 });
 
+// POST method route (for the tweet)
+router.post('/', (req, res) => {
+    //  Updates the authenticating user’s current status, also known as Tweeting.
+    config.post('statuses/update', { status: req.body.tweetText }, (error, data) => {
+        res.redirect('/');
+    });
+});
+
 module.exports = router;

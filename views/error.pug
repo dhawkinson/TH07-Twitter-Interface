@@ -3,5 +3,6 @@ extends layout
 block main
     .bounds.error-page
         .error-msg
-            h1 `${err.message} - Status: ${err.status}`
+            h1.error-code #{status} #{ status === 404 ? 'File Not Found' : 'Server Error'}
+            h2 #{message}
 

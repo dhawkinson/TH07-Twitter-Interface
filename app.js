@@ -2,12 +2,14 @@
 
 //  Require all packages for the app
 //===================================================
-const express      = require('express');                 //  express as a framework
-const bodyParser   = require('body-parser');             //  body-parser - to handle request parsing
-const cookieParser = require('cookie-parser');           //  cookie-parser - to handle cookie parsing
-const path         = require('path');                    //  path director
-const app          = express();                          //  equate the app to express
-const index        = require('./routes/index');          //  establish the root route
+const express      = require('express');                     //  express as a framework
+const router       = express.Router();
+const bodyParser   = require('body-parser');                 //  body-parser - to handle request parsing
+const cookieParser = require('cookie-parser');               //  cookie-parser - to handle cookie parsing
+const path         = require('path');                        //  path director
+const app          = express();                              //  equate the app to express
+const index        = require('./routes/index');              //  establish the root route
+const config       = require('./configurators/twitData');   //  twitter configuration data
 
 // call express service modules
 //===================================================
