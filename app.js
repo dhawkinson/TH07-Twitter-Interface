@@ -28,12 +28,12 @@ app.use('/', index);
 
 //  call error handling
 //===================================================
-app.use((req, res, next) => {
-    "use strict";
-    const err = new Error('Sorry, your page was not found.');
-    err.status = 404;
-    next(err);
-});
+//app.use((req, res, next) => {
+//    "use strict";
+//    const err = new Error('Sorry, your page was not found.');
+//    err.status = 404;
+//    next(err);
+//});
 
 app.use((err, req, res) => {
     "use strict";
