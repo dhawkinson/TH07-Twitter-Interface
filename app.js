@@ -31,15 +31,15 @@ app.use('/', index);
 
 app.use((err, req, res) => {
     "use strict";
-    if ( res.statusCode !== 404 ) {
-        res.statusCode = 500;
-        res.message = 'Sorry, there was an Unspecified Server Error'
+    if ( err.statusCode !== 404 ) {
+        err.statusCode = 500;
+        err.message = 'Sorry, there was an unspecified error'
     } else {
-        res.message = 'Sorry, your file was not found'
+        err.message = 'Sorry, your file was not where it was expected'
     }
-    res.render('error', {
-        status : res.statusCode,
-        error  : res.message
+    app.render('error', {
+        status : err.statusCode,
+        error  : err.message
     });
 });
 
