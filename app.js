@@ -28,18 +28,19 @@ app.use('/', index);
 
 //  call error handling
 //===================================================
-//app.use((req, res, next) => {
-//    "use strict";
-//    const err = new Error('Sorry, your page was not found.');
-//    err.status = 404;
-//    next(err);
-//});
 
 app.use((err, req, res) => {
     "use strict";
-    res.locals.error = err;
-    res.status(err.status);
-    res.render('error');
+    if ( res.statusCode !== 404 ) {
+        res.statusCode = 500;
+        res.message = 'Sorry, there was an Unspecified Server Error'
+    } else {
+        res.message = 'Sorry, your file was not found'
+    }
+    res.render('error', {
+        status : res.statusCode,
+        error  : res.message
+    });
 });
 
 app.listen(3000, () => {
