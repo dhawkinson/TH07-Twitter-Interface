@@ -33,13 +33,11 @@ router.get('/', function(req, res) {
             console.log('Caught error in rendering ', err);
             if (app.get('env') === 'development') {
                 res.render('error', {
-                    userName: user,
                     status: res.statusCode,
                     error: err
                 });
             } else {
                 res.render('error', {
-                    userName: user.screen_name,
                     status: res.statusCode,
                     error: {}
                 });

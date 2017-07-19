@@ -28,19 +28,30 @@ app.use('/', index);
 
 //  call error handling
 //===================================================
+app.use((req, res, next) => {
+    const err = new Error('Sorry, your file was not where it was expected');
+    err.status = 404;
+    next(err);
+});
 
-app.use((err, req, res) => {
-    "use strict";
-    if ( err.statusCode !== 404 ) {
-        err.statusCode = 500;
-        err.message = 'Sorry, there was an unspecified error'
-    } else {
-        err.message = 'Sorry, your file was not where it was expected'
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    if (err.status !== 404) {
+        err.message = "Sorry, there was an unspecified error";
     }
-    app.render('error', {
-        status : err.statusCode,
-        error  : err.message
-    });
+    if (app.get('env') === 'development') {
+        res.render('error', {
+            status: res.statusCode,
+            message: err.message,
+            error: err
+        });
+    } else {
+        res.render('error', {
+            status: res.statusCode,
+            message: err.message,
+            error: {}
+        });
+    }
 });
 
 app.listen(3000, () => {
