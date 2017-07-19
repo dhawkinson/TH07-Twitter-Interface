@@ -31,17 +31,6 @@ router.get('/', function(req, res) {
             });
         }).catch(err => {
             console.log('Caught error in rendering ', err);
-            if (app.get('env') === 'development') {
-                res.render('error', {
-                    status: res.statusCode,
-                    error: err
-                });
-            } else {
-                res.render('error', {
-                    status: res.statusCode,
-                    error: {}
-                });
-            }
         });
     });
 });
