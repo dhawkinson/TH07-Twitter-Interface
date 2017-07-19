@@ -4,5 +4,5 @@ block main
     .bounds.error-page
         .error-msg
             h1.error-code #{status} #{ status === 404 ? 'File Not Found' : 'Server Error'}
-            h2 #{message}
+            h2 #{user} #{message}
 

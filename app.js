@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');               //  cookie-parser -
 const path         = require('path');                        //  path director
 const app          = express();                              //  equate the app to express
 const index        = require('./routes/index');              //  establish the root route
-const config       = require('./configurators/twitData');   //  twitter configuration data
+const config       = require('./configurators/twitData');    //  twitter configuration data
 
 // call express service modules
 //===================================================
@@ -26,7 +26,7 @@ app.set('view engine', 'pug');                           //  set view engine to 
 //===================================================
 app.use('/', index);
 
-//  call error handling
+//  call error handling for global HTTP errors
 //===================================================
 app.use((req, res, next) => {
     const err = new Error('Sorry, your file was not where it was expected');
@@ -39,19 +39,34 @@ app.use((err, req, res, next) => {
     if (err.status !== 404) {
         err.message = "Sorry, there was an unspecified error";
     }
-    if (app.get('env') === 'development') {
-        res.render('error', {
-            status: res.statusCode,
-            message: err.message,
-            error: err
+    //  Returns 200 OK response code & representation of the requesting user on success; or 401 & an error message if not.
+    config.get('account/verify_credentials').then(creds => {
+        const user = creds.data;                                //  the results of credentialing
+        Promise.all([
+            //  Returns a variety of information about the user specified by user.screen_name
+            config.get('users/show', { screen_name: user.screen_name })
+        ]).then(value => {
+            // render the index page (root route)
+            if (app.get('env') === 'development') {
+                res.render('error', {
+                    reqUser : value[0].data,
+                    status  : res.statusCode,
+                    message : err.message,
+                    error   : err
+                });
+            } else {
+                res.render('error', {
+                    reqUser : value[0].data,
+                    status  : res.statusCode,
+                    message : err.message,
+                    error   : {}
+                });
+            }
+        }).catch(err => {
+            //  deals only with errors related to the promise (not HTTP errors)
+            console.log('Caught error in rendering ', err);
         });
-    } else {
-        res.render('error', {
-            status: res.statusCode,
-            message: err.message,
-            error: {}
-        });
-    }
+    });
 });
 
 app.listen(3000, () => {

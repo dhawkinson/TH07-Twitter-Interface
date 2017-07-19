@@ -7,6 +7,8 @@ const config         = require('../configurators/twitData');
 const etSinceMsg     = require('../configurators/etSinceMsg');
 const app            = express();
 
+let routerUser       = '';
+
 router.get('/', function(req, res) {
     //  Returns 200 OK response code & representation of the requesting user on success; or 401 & an error message if not.
     config.get('account/verify_credentials').then(creds => {
@@ -30,6 +32,7 @@ router.get('/', function(req, res) {
                 etSinceMsg : etSinceMsg
             });
         }).catch(err => {
+            //  deals only with errors related to the promise (not HTTP errors)
             console.log('Caught error in rendering ', err);
         });
     });
