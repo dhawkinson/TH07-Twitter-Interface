@@ -19,7 +19,6 @@ Include your personal Twitter name and profile image at the top of the screen.
 Using Node and Express, request the data you need from Twitter’s API
 
 Each rendered result must include all of the information seen in the sample layout:
-
     <ul><li>tweets -message content -# of retweets -# of likes -date tweeted<li>
     <li>friends -profile image -real name -screenname</li>
     <li>messages -message body -date the message was sent -time the message was sen</li></ul>
