@@ -1,4 +1,4 @@
-#TH07-Twitter-Interface
+# TH07-Twitter-Interface
 Full Stack Java Script Project 07 - Treehouse TechDegree
 
 Create a new Twitter application.
@@ -26,7 +26,7 @@ Each rendered result must include all of the information seen in the sample layo
 
 NOTE: You don’t have to display direct messages as a back and forth conversation. You only need to display the last 5 messages that were received, or the last 5 messages that were sent.
 
-##Extra Credit
+## Extra Credit
 
 To get an "exceeds" rating, you can expand on the project in the following ways:
     <ul><li>Add a section to the bottom of your page that allows a user to post a new tweet.</li>
